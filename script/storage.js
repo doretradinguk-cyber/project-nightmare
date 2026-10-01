@@ -1,0 +1,1 @@
+const DB='nightmare-engine-knowledge',VERSION=1;export function initStorage(){if(!indexedDB)return;const req=indexedDB.open(DB,VERSION);req.onupgradeneeded=()=>{const db=req.result;['assets','audio','text','animations','rules','prompts','memos','screenshots'].forEach(n=>{if(!db.objectStoreNames.contains(n))db.createObjectStore(n,{keyPath:'id',autoIncrement:true})})}}
