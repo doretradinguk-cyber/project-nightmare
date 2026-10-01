@@ -1,0 +1,48 @@
+{
+  "name": "project-nightmare-knowledge",
+  "stores": {
+    "assets": [
+      "sprites",
+      "textures",
+      "files"
+    ],
+    "audio": [
+      "json",
+      "mp3"
+    ],
+    "text": [
+      "scripts",
+      "dialogue",
+      "metadata"
+    ],
+    "animations": [
+      "clips",
+      "layers",
+      "timelines"
+    ],
+    "rules": [
+      "sprite-behaviour",
+      "game-logic"
+    ],
+    "prompts": [
+      "ai-prompts",
+      "handover",
+      "build-notes"
+    ],
+    "memos": [
+      "admin",
+      "decisions"
+    ],
+    "screenshots": [
+      "troubleshooting",
+      "style-reference"
+    ]
+  },
+  "pipeline": [
+    "intake",
+    "classify",
+    "validate",
+    "index",
+    "teach-engine"
+  ]
+}
