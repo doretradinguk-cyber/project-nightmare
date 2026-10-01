@@ -6,10 +6,22 @@ const pageLinks=[
   {id:'database',n:'05',title:'DATABASE / DEV BRIDGE',desc:'Knowledge, prompts and administration'}
 ];
 
+const matrixGlyphs=['ᚠ','ᛉ','ᛟ','𓂀','𐌗','7','101','404','☠','👁','ϟ','∴','∆','ᚱ'];
+function matrixRain(){
+ let s='<div class="page-matrix-rain" aria-hidden="true">';
+ for(let i=0;i<56;i++){
+   const a=(((i*17)%100)+2)%100;
+   const delay=-(i%13);
+   const duration=7+(i%8);
+   const g=matrixGlyphs[i%matrixGlyphs.length]+' '+matrixGlyphs[(i+3)%matrixGlyphs.length];
+   s+='<span style="left:'+a+'%;animation-delay:'+delay+'s;animation-duration:'+duration+'s">'+g+'</span>';
+ }
+ return s+'</div>';
+}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const btn=(label,go)=>go?'<button class="glow-btn" data-go="'+go+'">'+label+'</button>':'<button class="glow-btn">'+label+'</button>';
 function shell(p,body){
-  return '<div class="page page-'+p.n+'" data-page="'+p.id+'"><div class="page-art"></div><div class="page-vignette"></div><div class="page-content"><div class="page-heading"><span class="page-kicker">PROJECT NIGHTMARE / PAGE '+p.n+'</span><h2>'+p.title+'</h2><p>'+p.desc+'</p></div>'+body+'</div></div>';
+  return '<div class="page page-'+p.n+'" data-page="'+p.id+'"><div class="page-art"></div><div class="page-vignette"></div>'+matrixRain()+'<div class="page-content"><div class="page-heading"><span class="page-kicker">PROJECT NIGHTMARE / PAGE '+p.n+'</span><h2>'+p.title+'</h2><p>'+p.desc+'</p></div>'+body+'</div></div>';
 }
 function panel(title,body){return '<section class="art-panel"><div class="panel-title"><span>'+title+'</span><i></i></div><div class="panel-body">'+body+'</div></section>'}
 
