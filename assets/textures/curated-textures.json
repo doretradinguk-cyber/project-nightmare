@@ -1,0 +1,20 @@
+{
+  "name": "new-dashboard-texture-selection",
+  "purpose": "Curated texture sources from the legacy asset repository for the new Project Nightmare visual direction.",
+  "rule": "Only textures that support the new retrowave / industrial-horror dashboard and future environments are selected. No legacy dashboard artwork or effects are copied.",
+  "source_repository": "doretradinguk-cyber/project-nightmare-game-engine",
+  "selected": [
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/brushed_concrete_04_4k.blend.zip","role":"industrial walls / structural surfaces"},
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/chipped_concrete_4k.blend.zip","role":"decayed concrete / horror environment"},
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/damaged_plaster_4k.blend.zip","role":"aged interior walls"},
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/metal_plate_4k.blend.zip","role":"industrial panels / machinery"},
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/painted_concrete_4k.blend.zip","role":"painted structural surfaces"},
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/plastered_wall_05_4k.blend.zip","role":"mansion / interior wall variation"},
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/rock_wall_16_4k.blend.zip","role":"foundations / basement / exterior variation"}
+  ],
+  "excluded": [
+    {"source":"ASSET_SOURCE_LIBRARY/01_POLYHAVEN/06_TEXTURES/patterned_terracotta_tiling_4k.blend.zip","reason":"not part of the first retrowave-industrial texture pass"}
+  ],
+  "transfer_status": "CURATED_PENDING_BINARY_TRANSFER",
+  "note": "The selected source files are Git LFS binaries. The connected GitHub file interface can read their LFS metadata but cannot transfer binary LFS objects into the new repository. Do not create fake placeholder ZIPs or LFS pointers in the new asset library."
+}
