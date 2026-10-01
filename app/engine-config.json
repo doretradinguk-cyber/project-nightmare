@@ -1,0 +1,19 @@
+{
+  "engines": [
+    "Suemas",
+    "Ruby",
+    "Lewis"
+  ],
+  "defaultEngine": "Suemas",
+  "input": [
+    "keyboard-mouse",
+    "xbox",
+    "playstation",
+    "touch"
+  ],
+  "camera": [
+    "first-person",
+    "third-person"
+  ],
+  "defaultEnvironment": "Mansion"
+}
