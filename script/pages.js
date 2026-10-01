@@ -18,17 +18,19 @@ function matrixRain(){
  }
  return s+'</div>';
 }
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function jesterEyes(){
+ return '<div class="jester-eyes" aria-hidden="true"><div class="jester-eye eye-left"><img src="assets/props/nightmare-eye.svg" alt=""><i></i></div><div class="jester-eye eye-right"><img src="assets/props/nightmare-eye.svg" alt=""><i></i></div></div>';
+}
 const btn=(label,go)=>go?'<button class="glow-btn" data-go="'+go+'">'+label+'</button>':'<button class="glow-btn">'+label+'</button>';
 function shell(p,body){
-  return '<div class="page page-'+p.n+'" data-page="'+p.id+'"><div class="page-art"></div><div class="page-vignette"></div>'+matrixRain()+'<div class="page-content"><div class="page-heading"><span class="page-kicker">PROJECT NIGHTMARE / PAGE '+p.n+'</span><h2>'+p.title+'</h2><p>'+p.desc+'</p></div>'+body+'</div></div>';
+  return '<div class="page page-'+p.n+'" data-page="'+p.id+'"><div class="page-art"></div><div class="page-vignette"></div>'+matrixRain()+jesterEyes()+'<div class="page-content"><div class="page-heading"><span class="page-kicker">PROJECT NIGHTMARE / PAGE '+p.n+'</span><h2>'+p.title+'</h2><p>'+p.desc+'</p></div>'+body+'</div></div>';
 }
 function panel(title,body){return '<section class="art-panel"><div class="panel-title"><span>'+title+'</span><i></i></div><div class="panel-body">'+body+'</div></section>'}
 
 export const PAGES=[
 {id:'dashboard',short:'01 / Dashboard',n:'01',title:'NIGHTMARE DASHBOARD',render:function(){
  let cards=pageLinks.slice(1).map(p=>'<button class="art-card" data-go="'+p.id+'"><span>PAGE '+p.n+'</span><strong>'+p.title+'</strong><small>'+p.desc+'</small><b>ACCESS ▸</b></button>').join('');
- return shell(this,'<div class="hero-copy"><div class="eyes-mark">◉ ◉</div><h3>PROJECT NIGHTMARE</h3><p>brought to you by seumas dore &amp; lewis dore, all rights reserved by dore trading uk</p></div><div class="art-card-grid">'+cards+'</div>'+panel('SYSTEM CONTROLS','<div class="button-row">'+btn('SPRITE LAB','sprites')+btn('GAME CONSOLE','console')+btn('VOICE / AUDIO','voice')+btn('DATABASE / DEV','database')+'</div>'))}},
+ return shell(this,'<div class="hero-copy"><h3>PROJECT NIGHTMARE</h3><p>brought to you by seumas dore &amp; lewis dore, all rights reserved by dore trading uk</p></div><div class="art-card-grid">'+cards+'</div>'+panel('SYSTEM CONTROLS','<div class="button-row">'+btn('SPRITE LAB','sprites')+btn('GAME CONSOLE','console')+btn('VOICE / AUDIO','voice')+btn('DATABASE / DEV','database')+'</div>'))}},
 {id:'sprites',short:'02 / Sprite Lab',n:'02',title:'SPRITE / ANIMATION LAB',render:function(){
  return shell(this,panel('SPRITE INTAKE','<div class="drop-zone">DROP SPRITES / ANIMATIONS<br><input id="spriteFiles" type="file" multiple accept="image/*,.json"></div><div id="spriteOut" class="readout">NO ASSETS LOADED</div>')+
  panel('ANIMATION TESTING','<div class="timeline"></div><div class="button-row">'+btn('MOVE')+btn('RESIZE')+btn('REMOVE LAYER')+btn('PLAY')+btn('DEV WINDOW')+'</div>')+
