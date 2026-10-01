@@ -1,0 +1,12 @@
+{
+  "name": "nightmare-core",
+  "colors": {
+    "void": "#050607",
+    "terminal-green": "#76ff89",
+    "acid": "#b8ff4a",
+    "signal-red": "#ff314b",
+    "screen-cyan": "#64f7ff",
+    "text": "#e8ffe8",
+    "muted": "#8ea79a"
+  }
+}
